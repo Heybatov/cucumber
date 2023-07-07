@@ -2,9 +2,12 @@ package com.loop.utilities;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.time.Duration;
+import java.util.List;
+
 public class Driver {
 
     /*
@@ -40,14 +43,24 @@ public class Driver {
                     WebDriverManager.chromedriver().setup();
                     driverPool.set(new ChromeDriver());
                     driverPool.get().manage().window().maximize();
-                    driverPool.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+                    driverPool.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(Integer.valueOf(ConfigurationReader.getProperty("timeout"))));
                     break;
                 case "firefox":
                     WebDriverManager.firefoxdriver().setup();
                     driverPool.set(new FirefoxDriver());
                     driverPool.get().manage().window().maximize();
-                    driverPool.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+                    driverPool.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(Integer.valueOf(ConfigurationReader.getProperty("timeout"))));
                     break;
+                case "headless":
+                    ChromeOptions options=new ChromeOptions();
+                    options.addArguments("--headless"); //enable headless mode
+//                    options.addArguments("start-maximized");//maximize
+                    WebDriverManager.chromedriver().setup();
+                    driverPool.set(new ChromeDriver(options));
+                    driverPool.get().manage().window().maximize();
+                    driverPool.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(Integer.valueOf(ConfigurationReader.getProperty("timeout"))));
+
+
             }
         }
         return driverPool.get();
@@ -63,4 +76,5 @@ public class Driver {
             driverPool.remove();
         }
     }
+
 }

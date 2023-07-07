@@ -33,6 +33,7 @@ public class GoogleSearchStepDefs {
         LOG.info("User types input to Google page");
     }
 
+
     @Then("user should see Loop Academy - Google Search in the google title")
     public void user_should_see_loop_academy_google_search_in_the_google_title() {
         String actualTitle = Driver.getDriver().getTitle();

@@ -7,9 +7,12 @@ import com.loop.utilities.Driver;
 import io.cucumber.java.en.*;
 import org.checkerframework.checker.nullness.qual.Nullable;
 import org.junit.Assert;
+import org.junit.Test;
+import org.openqa.selenium.By;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class ProductStepDefs {
     ProductPage productPage = new ProductPage();
@@ -84,6 +87,25 @@ public class ProductStepDefs {
         List<String> group3 = students.get("Group3");
         System.out.println("group3 = " + group3);
 
+    }
+
+
+    @Test
+    public void WindowHandle() {
+        Driver.getDriver().get("https://nxtgenaiacademy.com/multiplewindows/%22");
+
+
+                String CurrentHandle = Driver.getDriver().getWindowHandle();
+        Driver.getDriver().findElement(By.xpath("//button[@name='newbrowserwindow123']")).click();
+        Set<String>windowHandles = Driver.getDriver().getWindowHandles();
+        for (String eachWindow:windowHandles) {
+            Driver.getDriver().switchTo().window(eachWindow);
+            if(Driver.getDriver().getTitle().contains("NxtGen")){
+                Driver.getDriver().manage().window().maximize();
+                Driver.getDriver().close();
+//                break;
+            }
+        }
     }
 
 

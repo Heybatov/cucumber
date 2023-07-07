@@ -6,20 +6,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage {
-
+public class LoginPage extends DocuportBasePage {
     @FindBy(xpath = "//label[.='Username or email']/following-sibling::input")
     public WebElement usernameInput;
-
     @FindBy(xpath = "//label[.='Password']/following-sibling::input")
     public WebElement passwordInput;
-
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement loginButton;
-
     @FindBy(xpath = "//span[.='Home']")
     public WebElement homeButton;
-
     public void  loginDocuport(String username, String password){
         BrowserUtils.waitForVisibility(usernameInput, 10);
         usernameInput.clear();
@@ -31,9 +26,5 @@ public class LoginPage {
     }
     public LoginPage() {
         PageFactory.initElements(Driver.getDriver(), this);
-
     }
-
-
 }
-
