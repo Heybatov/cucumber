@@ -68,7 +68,7 @@ public class NewClientStepDefs {
 
         newClientPage.lastnameNewClient.sendKeys("Bob");
         newClientPage.createNewClientCheckBox.click();
-        newClientPage.emailNewClient.sendKeys("boblk123456789@gmail.com");
+        newClientPage.emailNewClient.sendKeys("bobsk123456789@gmail.com");
         BrowserUtils.justWait(1);
         newClientPage.advisorDropdown.click();
         newClientPage.batch1Group21.click();
@@ -132,7 +132,7 @@ public class NewClientStepDefs {
 
     @When("they LOG IN as a new client which was created")
     public void they_log_in_as_a_new_client_which_was_created() {
-        newClientPage.usernameInput.sendKeys("boblk123456789@gmail.com");
+        newClientPage.usernameInput.sendKeys("bobsk123456789@gmail.com");
         newClientPage.passwordInput.sendKeys("123456Sb");
         newClientPage.loginButton.click();
     }
