@@ -1,5 +1,1 @@
-19.07.2023 13:20:46 INFO  RowsStepDefs:21 - User clicks on USERS
-19.07.2023 13:20:46 INFO  RowsStepDefs:31 - User verify rows per page is 10
-19.07.2023 13:20:46 INFO  RowsStepDefs:26 - User change rows to 5
-19.07.2023 13:20:46 INFO  RowsStepDefs:31 - User verify rows per page is 5
-19.07.2023 13:20:47 INFO  Hooks:32 - ............END AUTOMATION.............LOOP ACADEMY..........
+31.07.2023 11:39:43 INFO  Hooks:21 - ............START AUTOMATION...........LOOP ACADEMY..........
