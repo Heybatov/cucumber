@@ -66,38 +66,49 @@ public class DocuportBasePage {
     public void clickButton(String button){
         switch (button.toLowerCase()){
             case "home":
-                home_button.click();
+                BrowserUtils.clickWithJS( home_button);
+                //home_button.click();
                 break;
             case "received docs":
-                receivedDocs_button.click();
+                BrowserUtils.clickWithJS( receivedDocs_button);
+                //receivedDocs_button.click();
                 break;
             case "my uploads":
-                myUploads_button.click();
+                BrowserUtils.clickWithJS( myUploads_button);
+                //myUploads_button.click();
                 break;
             case "clients":
-                clients_button.click();
+                BrowserUtils.clickWithJS( clients_button);
+                //clients_button.click();
                 break;
             case "invitations":
-                invitations_button.click();
+                BrowserUtils.clickWithJS( invitations_button);
+                //invitations_button.click();
                 break;
             case "users":
-                users_button.click();
+                BrowserUtils.clickWithJS( users_button);
+                //users_button.click();
                 break;
             case "leads":
-                leads_button.click();
+                BrowserUtils.clickWithJS( leads_button);
+                //leads_button.click();
                 break;
             case "bookkeping":
-                bookkeeping_button.click();
+                BrowserUtils.clickWithJS( bookkeeping_button);
+                //bookkeeping_button.click();
                 break;
             case "1099 form":
-                tenNineForm_button.click();
+                BrowserUtils.clickWithJS( tenNineForm_button);
+                //tenNineForm_button.click();
                 break;
             case "reconciliations":
-                reconciliations_button.click();
+                BrowserUtils.clickWithJS( reconciliations_button);
+                //reconciliations_button.click();
                 break;
             case "continue":
                 BrowserUtils.waitForVisibility(continueButtonOnClient_button,5);
-                continueButtonOnClient_button.click();
+                BrowserUtils.clickWithJS( continueButtonOnClient_button);
+                //continueButtonOnClient_button.click();
                 BrowserUtils.waitForClickable(tenNineForm_button,3);
                 break;
         }
