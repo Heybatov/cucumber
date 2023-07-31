@@ -1,6 +1,6 @@
 Feature: Ability to change the rows per page as advisor
 
-  @advisor
+  @smoke
   Scenario: change and validate rows per page
     Given user is on Docuport login page
     When the user login as an ADVISOR
