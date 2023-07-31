@@ -1,6 +1,4 @@
 Feature: I WANT to create a new CLIENT in the DOCUPORT and verify it
-
-
   Background:
     Given The user is on DOCUPORT login page
 
