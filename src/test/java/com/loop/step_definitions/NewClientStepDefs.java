@@ -7,6 +7,7 @@ import com.loop.utilities.DocuportUtils;
 import com.loop.utilities.Driver;
 import io.cucumber.java.en.*;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 
 public class NewClientStepDefs {
 
@@ -110,7 +111,6 @@ public class NewClientStepDefs {
 
         BrowserUtils.justWait(3);
         newClientPage.saveEnd.click();
-        //BrowserUtils.waitForVisibility(newClientPage.successMessage, 5);
         //  newClientPage.successMessage.isDisplayed();
 
 
@@ -118,6 +118,7 @@ public class NewClientStepDefs {
 
     @When("the user sees Confirmation “ <CLIENT FULL NAME> has been updated successfully”")
     public void the_user_sees_confirmation_client_full_name_has_been_updated_successfully() {
+        BrowserUtils.waitForVisibility(newClientPage.successMessage, 20);
 
     }
 

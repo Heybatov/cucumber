@@ -16,7 +16,8 @@ public class RowsStepDefs {
         LOG.info("User log in as an ADVISOR");
     }
     @When("the user clicks {string}")
-    public void the_user_clicks(String string) {
+    public void the_user_clicks(String string) throws InterruptedException {
+        Thread.sleep(5);
         rowsBasePage.clickButton(string);
         LOG.info("User clicks on "+string);
     }
